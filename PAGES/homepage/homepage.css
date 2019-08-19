@@ -1,0 +1,35 @@
+.login{
+    font-size: 350%;
+    text-align: center;
+    position: relative;
+}
+
+.logo {
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 120px;
+}
+
+
+
+ID_input{
+    display: block;
+}
+
+form{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.adm {
+    margin-top: 10px;
+}
+
+.checkcontainer {
+    padding-left: 15px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 17px;
+}
