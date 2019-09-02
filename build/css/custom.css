@@ -1,10 +1,12 @@
-
+body{
+    background-image: image();
+}
 html , body{
 	
  height:100%;
  
 }
- 
+
 .full-width {
 	
  width:100%;
@@ -4240,7 +4242,7 @@ ul.notifications {
 table thead .checkbox { margin-top:-7px;margin-top:-21px; }
 table thead .checkbox.radio { margin-top:-7px;margin-top:-21px; }
 */
-			
+
 .daterangepicker.xdisplay { width:228px; }
 
 .dataTables_wrapper > .row{
