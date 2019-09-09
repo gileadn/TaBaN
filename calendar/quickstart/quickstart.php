@@ -17,10 +17,6 @@
 // [START calendar_quickstart]
 require __DIR__ . '\vendor\autoload.php';
 
-if (php_sapi_name() != 'cli') {
-    throw new Exception('This application must be run on the command line.');
-}
-
 /**
  * Returns an authorized API client.
  * @return Google_Client the authorized client object
@@ -29,7 +25,7 @@ function getClient()
 {
     $client = new Google_Client();
     $client->setApplicationName('Google Calendar API PHP Quickstart');
-    $client->setScopes(Google_Service_Calendar::CALENDAR_READONLY);
+    $client->setScopes('https://www.googleapis.com/auth/calendar');
     $client->setAuthConfig('credentials.json');
     $client->setAccessType('offline');
     $client->setPrompt('select_account consent');
@@ -82,7 +78,7 @@ $service = new Google_Service_Calendar($client);
 // Print the next 10 events on the user's calendar.
 $calendarId = 'primary';
 $optParams = array(
-  'maxResults' => 10,
+  'maxResults' => 3,
   'orderBy' => 'startTime',
   'singleEvents' => true,
   'timeMin' => date('c'),
@@ -102,4 +98,17 @@ if (empty($events)) {
         printf("%s (%s)\n", $event->getSummary(), $start);
     }
 }
+   // $createdEvent = $service->events->quickAdd(
+      //'primary',
+    //   'gay on october 17th 10am-10:25am');
+    $calendarList = $service->calendarList->listCalendarList();
+    if (empty($calendarList)) {
+        print "No upcoming events found.\n";
+    } else {
+        print "your calendars:\n";
+        foreach ($calendarList as $cal) {
+            printf("%s\n", $cal->getSummary());
+        }
+    }
+    //$service->events->delete('primary', 'eventId');
 // [END calendar_quickstart]
