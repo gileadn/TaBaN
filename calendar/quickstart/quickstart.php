@@ -98,16 +98,17 @@ if (empty($events)) {
         printf("%s (%s)\n", $event->getSummary(), $start);
     }
 }
-   // $createdEvent = $service->events->quickAdd(
-      //'primary',
-    //   'gay on october 17th 10am-10:25am');
+   //$createdEvent = $service->events->quickAdd(
+    //  'primary',
+  //  'sagi on may 5th 10am-10:25am');
+    
     $calendarList = $service->calendarList->listCalendarList();
     if (empty($calendarList)) {
         print "No upcoming events found.\n";
     } else {
         print "your calendars:\n";
         foreach ($calendarList as $cal) {
-            printf("%s\n", $cal->getSummary());
+            printf("%s, %s\n", $cal->getsummary() , $cal->getid());
         }
     }
     //$service->events->delete('primary', 'eventId');
