@@ -15,6 +15,7 @@
       <path value="$PROJECT_DIR$/calendar/quickstart/vendor/guzzlehttp/promises" />
       <path value="$PROJECT_DIR$/calendar/quickstart/vendor/psr/http-message" />
       <path value="$PROJECT_DIR$/calendar/quickstart/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/calendar/quickstart/vendor/ralouphie/getallheaders" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="5.4.0" />

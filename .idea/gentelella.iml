@@ -17,6 +17,7 @@
       <excludeFolder url="file://$MODULE_DIR$/calendar/quickstart/vendor/psr/cache" />
       <excludeFolder url="file://$MODULE_DIR$/calendar/quickstart/vendor/psr/http-message" />
       <excludeFolder url="file://$MODULE_DIR$/calendar/quickstart/vendor/psr/log" />
+      <excludeFolder url="file://$MODULE_DIR$/calendar/quickstart/vendor/ralouphie/getallheaders" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

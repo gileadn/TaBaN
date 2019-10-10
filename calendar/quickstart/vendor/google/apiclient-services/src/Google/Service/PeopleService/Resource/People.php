@@ -128,6 +128,16 @@ class Google_Service_PeopleService_Resource_People extends Google_Service_Resour
    *
    * @param array $optParams Optional parameters.
    *
+   * @opt_param string resourceNames The resource names of the people to provide
+   * information about.
+   *
+   * - To get information about the authenticated user, specify `people/me`. - To
+   * get information about a google account, specify   `people/`account_id. - To
+   * get information about a contact, specify the resource name that   identifies
+   * the contact as returned by
+   * [`people.connections.list`](/people/api/rest/v1/people.connections/list).
+   *
+   * You can include up to 50 resource names in one request.
    * @opt_param string personFields **Required.** A field mask to restrict which
    * fields on each person are returned. Multiple fields can be specified by
    * separating them with commas. Valid values are:
@@ -141,16 +151,6 @@ class Google_Service_PeopleService_Resource_People extends Google_Service_Resour
    * @opt_param string requestMask.includeField **Required.** Comma-separated list
    * of person fields to be included in the response. Each path should start with
    * `person.`: for example, `person.names` or `person.photos`.
-   * @opt_param string resourceNames The resource names of the people to provide
-   * information about.
-   *
-   * - To get information about the authenticated user, specify `people/me`. - To
-   * get information about a google account, specify   `people/`account_id. - To
-   * get information about a contact, specify the resource name that   identifies
-   * the contact as returned by
-   * [`people.connections.list`](/people/api/rest/v1/people.connections/list).
-   *
-   * You can include up to 50 resource names in one request.
    * @return Google_Service_PeopleService_GetPeopleResponse
    */
   public function getBatchGet($optParams = array())
@@ -168,10 +168,11 @@ class Google_Service_PeopleService_Resource_People extends Google_Service_Resour
    * The request throws a 400 error if `person.metadata.sources` is not specified
    * for the contact to be updated.
    *
-   * The request throws a 412 error if `person.metadata.sources.etag` is different
-   * than the contact's etag, which indicates the contact has changed since its
-   * data was read. Clients should get the latest person and re-apply their
-   * updates to the latest person. (people.updateContact)
+   * The request throws a 400 error with an error with reason
+   * `"failedPrecondition"` if `person.metadata.sources.etag` is different than
+   * the contact's etag, which indicates the contact has changed since its data
+   * was read. Clients should get the latest person and re-apply their updates to
+   * the latest person. (people.updateContact)
    *
    * @param string $resourceName The resource name for the person, assigned by the
    * server. An ASCII string with a max length of 27 characters, in the form of
