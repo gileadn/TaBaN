@@ -127,7 +127,7 @@
                             <div class="clearfix"></div>
                         </div>
                         <div class="x_content">
-                            <form action="check.php" method="post" accept-charset="utf-8">
+                            <form action="php/Addcourse.php" method="post" accept-charset="utf-8">
                                 <label for="semester">סמסטר</label>
                                 <input type="radio" name="semester" value="ד">   ד'
                                 <input type="radio" name="semester" value="ה">ה'
@@ -227,7 +227,6 @@
                             <table class="table table-hover">
                                 <thead>
                                 <tr>
-                                    <th>#</th>
                                     <th style="text-align: center">קורס</th>
                                     <th style="text-align: center">שיעורים</th>
                                     <th style="text-align: center">שעות</th>
@@ -235,27 +234,18 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>גיודזיה</td>
-                                    <td>3</td>
-                                    <td>89</td>
-                                    <td>94</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>משפטים</td>
-                                    <td>3</td>
-                                    <td>94</td>
-                                    <td>94</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>BI</td>
-                                    <td>3.5</td>
-                                    <td>76</td>
-                                    <td>94</td>
-                                </tr>
+                                <?php
+                                    $mysql_qry = "SELECT * FROM course  where semster = 'ד' ";
+                                    $ans= mysqli_query($conn, $mysql_qry);
+                                    while($row = mysqli_fetch_assoc($ans)) {
+                                        echo '<tr>';
+                                        echo '<td>'.$row["coursename"].'</td>';
+                                        echo '<td>'.$row["classes"].'</td>';
+                                        echo '<td>'.$row["hours"].'</td>';
+                                        echo '<td>'.$row["points"].'</td>';
+                                        echo '</tr>';
+                                    }
+                                ?>
                                 </tbody>
                             </table>
                         
@@ -281,7 +271,6 @@
                             <table class="table table-hover">
                                 <thead>
                                 <tr>
-                                    <th>#</th>
                                     <th style="text-align: center">קורס</th>
                                     <th style="text-align: center">שיעורים</th>
                                     <th style="text-align: center">שעות</th>
@@ -289,35 +278,18 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>גיודזיה</td>
-                                    <td>3</td>
-                                    <td>9</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>משפטים</td>
-                                    <td>3</td>
-                                    <td>94</td>
-                                    <td>94</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>BI</td>
-                                    <td>3.5</td>
-                                    <td>76</td>
-                                    <td>94</td>
-                                </tr>
-                                <tr>
-                                    <b>
-                                        <th scope="row"><b>4</b></th>
-                                        <td><b>ממוצע</b></td>
-                                        <td><b>30</b></td>
-                                        <td><b>80.3</b></td>
-                                        <td>94</td>
-                                    </b>
-                                </tr>
+                                <?php
+                                    $mysql_qry = "SELECT * FROM course  where semster = 'ה' ";
+                                    $ans= mysqli_query($conn, $mysql_qry);
+                                    while($row = mysqli_fetch_assoc($ans)) {
+                                        echo '<tr>';
+                                        echo '<td>'.$row["coursename"].'</td>';
+                                        echo '<td>'.$row["classes"].'</td>';
+                                        echo '<td>'.$row["hours"].'</td>';
+                                        echo '<td>'.$row["points"].'</td>';
+                                        echo '</tr>';
+                                    }
+                                ?>
                                 </tbody>
                             </table>
                         </div>
@@ -343,7 +315,6 @@
                             <table class="table table-hover">
                                 <thead>
                                 <tr>
-                                    <th>#</th>
                                     <th style="text-align: center">קורס</th>
                                     <th style="text-align: center">שיעורים</th>
                                     <th style="text-align: center">שעות</th>
@@ -351,36 +322,18 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>גיודזיה</td>
-                                    <td>3</td>
-                                    <td>9</td>
-                                    <td>94</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>משפטים</td>
-                                    <td>3</td>
-                                    <td>94</td>
-                                    <td>94</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>BI</td>
-                                    <td>3.5</td>
-                                    <td>76</td>
-                                    <td>94</td>
-                                </tr>
-                                <tr>
-                                    <b>
-                                        <th scope="row"><b>4</b></th>
-                                        <td><b>ממוצע</b></td>
-                                        <td><b>30</b></td>
-                                        <td><b>80.3</b></td>
-                                        <td>94</td>
-                                    </b>
-                                </tr>
+                                <?php
+                                    $mysql_qry = "SELECT * FROM course  where semster = 'ו' ";
+                                    $ans= mysqli_query($conn, $mysql_qry);
+                                    while($row = mysqli_fetch_assoc($ans)) {
+                                        echo '<tr>';
+                                        echo '<td>'.$row["coursename"].'</td>';
+                                        echo '<td>'.$row["classes"].'</td>';
+                                        echo '<td>'.$row["hours"].'</td>';
+                                        echo '<td>'.$row["points"].'</td>';
+                                        echo '</tr>';
+                                    }
+                                ?>
                                 </tbody>
                             </table>
                         

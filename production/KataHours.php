@@ -111,7 +111,7 @@
         
         <!-- page content -->
         <div class="right_col" role="main" dir="rtl">
-            <div class="row">
+            <div class="row" style="text-align: center">
                 <div class="col-md-8 col-xs-12">
                     <div class="x_panel">
                         <div class="x_title">
@@ -128,114 +128,127 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-sm-6 col-xs-12" dir="rtl" style="text-align: center">
+                <div class="col-md-4 col-xs-12">
                     <div class="x_panel">
-                        <div class="x_title">
-                            <h2 style="float: right">יעדים  אישיים </h2>
-                            <ul class="nav navbar-right panel_toolbox">ערוך
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                            </ul>
+                        <div style="text-align: center" class="x_title">
+                            <h2 style="text-align: right">שעות שבועיות</h2>
                             <div class="clearfix"></div>
                         </div>
-                        <div class="x_content" >
-                            <table class="table table-hover">
-                                <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th style="text-align: center">קורס</th>
-                                    <th style="text-align: center">נק"ז</th>
-                                    <th style="text-align: center">ציון מטרה</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>גיודזיה</td>
-                                    <td>3</td>
-                                    <td><input type="number" style="width: 20%"></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>משפטים</td>
-                                    <td>3</td>
-                                    <td>94</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>BI</td>
-                                    <td>3.5</td>
-                                    <td>76</td>
-                                </tr>
-                                <tr>
-                                    <b>
-                                        <th scope="row"><b>4</b></th>
-                                        <td><b>ממוצע</b></td>
-                                        <td><b>30</b></td>
-                                        <td><b>80.3</b></td>
-                                    </b>
-                                </tr>
-                                </tbody>
-                            </table>
-                        
+                        <div class="x_content">
+                        </div>
+                        <div class="x_content">
+                            <form action="check.php" method="post" accept-charset="utf-8">
+                                <label for="semester">סמסטר</label>
+                                <input type="button" style="width: 30px;" name="semester" value="ד">
+                                <input type="button" style="width: 30px;"name="semester" value="ה">
+                                <input type="button" style="width: 30px;" name="semester" value="ו">
+                                <label for="week">שבוע</label>
+                                <input type="number" name="number" style="width: 40px;"  id="number" required >
+                                <br>
+                                <input type="submit"   style="text-align: center" class="btn btn btn-success" value="הצג">
+                            </form>
+                        </div>
+                            <div class="x_content" >
+                                <table class="table table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th style="text-align: center">קורס</th>
+                                        <th style="text-align: center">שעות מתוכננות</th>
+                                        <th style="text-align: center">שעות שבוצעו</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>גיודזיה</td>
+                                        <td>3</td>
+                                        <td>33</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>משפטים</td>
+                                        <td>3</td>
+                                        <td>94</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>BI</td>
+                                        <td>3.5</td>
+                                        <td>76</td>
+                                    </tr>
+                                    <tr>
+                                        <b>
+                                            <th scope="row"><b>4</b></th>
+                                            <td><b>ממוצע</b></td>
+                                            <td><b>30</b></td>
+                                            <td><b>80.3</b></td>
+                                        </b>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                    </div>
+                </div>
+                <div class="row" style="text-align: center">
+                    <div class="col-md-3 col-sm-12 col-xs-12" dir="rtl" style="text-align: center"></div>
+                    <div class="col-md-6 col-sm-6 col-xs-6" dir="rtl" style="text-align: center">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2 style="float: bottom;">שעות סה"כ </h2>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content" >
+                                <table class="table table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th style="text-align: center">קורס</th>
+                                        <th style="text-align: center">שעות בסילבוס</th>
+                                        <th style="text-align: center">שעות שתוכננו</th>
+                                        <th style="text-align: center">שעות שבוצעו</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>גיודזיה</td>
+                                        <td>3</td>
+                                        <td>76</td>
+                                        <td><input type="number" style="width: 20%"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>משפטים</td>
+                                        <td>3</td>
+                                        <td>76</td>
+                                        <td>94</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>BI</td>
+                                        <td>3.5</td>
+                                        <td>76</td>
+                                        <td>76</td>
+                                    </tr>
+                                    <tr>
+                                        <b>
+                                            <th scope="row"><b>4</b></th>
+                                            <td><b>ממוצע</b></td>
+                                            <td><b>30</b></td>
+                                            <td><b>80.3</b></td>
+                                        </b>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            
+                            </div>
                         </div>
                     </div>
+                    <div class="col-md-3 col-sm-12 col-xs-12" dir="rtl" style="text-align: center"></div>
                 </div>
             </div>
             <br />
-            <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-12" dir="rtl" style="text-align: center">
-                    <div class="x_panel">
-                        <div class="x_title">
-                            <h2 style="float: right">יעדים  אישיים </h2>
-                            <ul class="nav navbar-right panel_toolbox">ערוך
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                            </ul>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="x_content" >
-                            <table class="table table-hover">
-                                <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th style="text-align: center">קורס</th>
-                                    <th style="text-align: center">נק"ז</th>
-                                    <th style="text-align: center">ציון מטרה</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>גיודזיה</td>
-                                    <td>3</td>
-                                    <td><input type="number" style="width: 20%"></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>משפטים</td>
-                                    <td>3</td>
-                                    <td>94</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>BI</td>
-                                    <td>3.5</td>
-                                    <td>76</td>
-                                </tr>
-                                <tr>
-                                    <b>
-                                        <th scope="row"><b>4</b></th>
-                                        <td><b>ממוצע</b></td>
-                                        <td><b>30</b></td>
-                                        <td><b>80.3</b></td>
-                                    </b>
-                                </tr>
-                                </tbody>
-                            </table>
-                        
-                        </div>
-                    </div>
-                </div>
-            </div>
             <!-- /page content -->
         </div>
         <footer>
