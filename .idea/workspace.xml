@@ -4,10 +4,6 @@
     <list default="true" id="7a477476-3376-4ca2-8588-1acfb21a8415" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/composer/composer" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/composer/composer.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/production/check.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/production/css/loginButton.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/production/js/LoginButton.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer/.github/CONTRIBUTING.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/composer/.github/ISSUE_TEMPLATE.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/composer/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer/composer.json" afterDir="false" />
@@ -393,20 +389,6 @@
       <change beforePath="$PROJECT_DIR$/composer/tests/Composer/Test/Util/ZipTest.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/composer/tests/bootstrap.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/composer/tests/complete.phpunit.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loginPHP.php" beforeDir="false" afterPath="$PROJECT_DIR$/loginPHP.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/AftKataLogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/production/AftKataLogin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/KataCancles.php" beforeDir="false" afterPath="$PROJECT_DIR$/production/KataCancles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/KataConst.php" beforeDir="false" afterPath="$PROJECT_DIR$/production/KataConst.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/KataDB.php" beforeDir="false" afterPath="$PROJECT_DIR$/production/KataDB.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/KataHisor.php" beforeDir="false" afterPath="$PROJECT_DIR$/production/KataHisor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/KataHours.php" beforeDir="false" afterPath="$PROJECT_DIR$/production/KataHours.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/KataJust.php" beforeDir="false" afterPath="$PROJECT_DIR$/production/KataJust.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/KataOtherGrades.php" beforeDir="false" afterPath="$PROJECT_DIR$/production/KataOtherGrades.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/KataToran.php" beforeDir="false" afterPath="$PROJECT_DIR$/production/KataToran.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/RegConst.php" beforeDir="false" afterPath="$PROJECT_DIR$/production/RegConst.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/RegJust.php" beforeDir="false" afterPath="$PROJECT_DIR$/production/RegJust.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/video/Looping_Clouds.mp4" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -497,8 +479,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/production/KataHisor.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="233" column="58" selection-start-line="233" selection-start-column="58" selection-end-line="233" selection-end-column="58" />
+            <state relative-caret-position="111">
+              <caret line="321" column="3" lean-forward="true" selection-start-line="321" selection-start-column="3" selection-end-line="321" selection-end-column="3" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -598,9 +580,10 @@
       <find>&lt;div class=&quot;pull-right&quot;&gt;</find>
       <find>השכלה - מערכת לניהול חיי צוערים. תוכנתה ע&quot;י תם בן שפר, שחר בורג וגלעד נבו קורס 180</find>
       <find>השכלה - מערכת לניהול חיי צוערים. פותחה ע&quot;י תם בן שפר, שחר בורג וגלעד נבו- קורס 180</find>
-      <find>ערו</find>
       <find>יום</find>
       <find>הסר</find>
+      <find>ערו</find>
+      <find>scrip</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -858,7 +841,7 @@
       <workItem from="1570003554807" duration="5666000" />
       <workItem from="1570427267593" duration="27224000" />
       <workItem from="1570622367785" duration="32925000" />
-      <workItem from="1571084302136" duration="27001000" />
+      <workItem from="1571084302136" duration="27702000" />
     </task>
     <servers />
   </component>
@@ -868,7 +851,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59926000" />
+    <option name="totallyTimeSpent" value="60627000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -1217,8 +1200,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/production/KataHisor.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="233" column="58" selection-start-line="233" selection-start-column="58" selection-end-line="233" selection-end-column="58" />
+        <state relative-caret-position="111">
+          <caret line="321" column="3" lean-forward="true" selection-start-line="321" selection-start-column="3" selection-end-line="321" selection-end-column="3" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
