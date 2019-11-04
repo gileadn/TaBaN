@@ -144,16 +144,16 @@
                         <div class="x_content">
                             <form action="check.php" method="post" accept-charset="utf-8">
                                 <label for="date">תאריך</label>
-                                <input type="date" name="date" id="date" required style="width: 120px;">
-                                <label for="hour">שעה</label>
+                                <input type="date" name="date" id="date" required style="width: 130px;">
+                                <label for="hour">שעת התחלה</label>
                                 <input type="time" id="hour" name="hour" required>
                                 <label for="name">צוער</label>
-                                <select name="name" id="name" required>
+                                <select name="name" style="height: 25px" id="name" required>
                                     <option></option>
                                     <option value="אבגד">PHP שמות צוערים</option>
                                 </select>
                                 <label for="toran">תורנות</label>
-                                <select name="toran" id="toran" required>
+                                <select name="toran" style="height: 25px" id="toran" required>
                                     <option></option>
                                     <option value="אא">קתפ"ט</option>
                                     <option value="בב">מטבח</option>
@@ -163,12 +163,13 @@
                                 <label for="ClassHours">שעות על שיעור</label>
                                 <input type="number" name="ClassHours" style="width: 5%" id="ClassHours" required>
                                 <label for="class">שיעור</label>
-                                <select name="class" id="class" required>
+                                <select name="class" style="height: 25px" id="class" required>
                                     <option></option>
                                     <option value="אא">שיעורים PHP</option>
                                 </select>
                                 <label for="FreeHours">שעות על חופשי</label>
                                 <input type="number" name="FreeHours" style="width: 5%" id="FreeHours" minlength="1" required>
+                                <input name="email" style="display: none" value="<?php echo $email ?>">
                                 <input type="submit"  class="btn btn btn-success" value="הוסף">
                                 <button type="button" onclick="closeAddForm()" class="btn btn btn-danger">סגור</button>
                             </form>
@@ -187,14 +188,59 @@
                             <form action="check.php" method="post" accept-charset="utf-8">
                                 <label for="date">תאריך</label>
                                 <input type="date" name="date" id="date" required >
-                                <label for="hour">שעה</label>
+                                <label for="hour">שעת התחלה</label>
                                 <input type="time" id="hour" name="hour" required>
                                 <label for="name">צוער</label>
-                                <select name="name" id="name" required>
+                                <select name="name" style="height: 25px" id="name" required>
                                     <option></option>
                                     <option value="אבגד">PHP שמות צוערים</option>
+                                </select>
+                                <input name="email" style="display: none" value="<?php echo $email ?>">
                                 <input type="submit"  class="btn btn btn-success" value="הסר">
                                 <button type="button" onclick="closeRemoveForm()" class="btn btn btn-danger">סגור</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="display: none" id="EditForm">
+                <div class="col-md-12 col-sm-12 col-xs-12" dir="rtl" style="text-align: center">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2 style="float: right">ערוך חיסור</h2>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+                            <form action="check.php" method="post" accept-charset="utf-8">
+                                <label for="date">תאריך</label>
+                                <input type="date" name="date" id="date" required style="width: 130px;">
+                                <label for="hour">שעת התחלה</label>
+                                <input type="time" id="hour" name="hour" required>
+                                <label for="name">צוער</label>
+                                <select name="name" style="height: 25px" id="name" required>
+                                    <option></option>
+                                    <option value="אבגד">PHP שמות צוערים</option>
+                                </select>
+                                <label for="toran">תורנות</label>
+                                <select name="toran" style="height: 25px" id="toran" required>
+                                    <option></option>
+                                    <option value="אא">קתפ"ט</option>
+                                    <option value="בב">מטבח</option>
+                                    <option value="גג">משיכת ירקות</option>
+                                    <option value="דד"> אחר</option>
+                                </select>
+                                <label for="ClassHours">שעות על שיעור</label>
+                                <input type="number" name="ClassHours" style="width: 5%" id="ClassHours" required>
+                                <label for="class">שיעור</label>
+                                <select name="class" style="height: 25px" id="class" required>
+                                    <option></option>
+                                    <option value="אא">שיעורים PHP</option>
+                                </select>
+                                <label for="FreeHours">שעות על חופשי</label>
+                                <input name="email" style="display: none" value="<?php echo $email ?>">
+                                <input type="number" name="FreeHours" style="width: 5%" id="FreeHours" minlength="1" required>
+                                <input type="submit"  class="btn btn btn-success" style="width: 54px" value="ערוך">
+                                <button type="button" onclick="closeEditForm()" class="btn btn btn-danger">סגור</button>
                             </form>
                         </div>
                     </div>

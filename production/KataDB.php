@@ -133,15 +133,77 @@
                                 <input type="radio" name="semester" value="ה">ה'
                                 <input type="radio" name="semester" value="ו">  ו'
                                 <label for="course">קורס</label>
-                                <input name="course" id="course" required>
+                                <select name="course" style="height: 25px" id="course" required>
+                                    <option></option>
+                                    <option value="אבגד">PHP שמות קורסים</option>
+                                </select>
                                 <label for="class">שיעורים</label>
                                 <input name="class" id="class" type="number" style="width: 5%" required>
                                 <label for="hours">שעות</label>
                                 <input type="number" name="hours" id="hours" style="width: 5%" required>
                                 <label for="points">נק"ז</label>
                                 <input type="number" name="points" id="points" style="width: 5%" required>
+                                <input name="email" style="display: none" value="<?php echo $email ?>">
                                 <input type="submit"  class="btn btn btn-success" value="הוסף">
                                 <button type="button" onclick="closeAddForm()" class="btn btn btn-danger">סגור</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="display: none" id="RemoveForm">
+                <div class="col-md-12 col-sm-12 col-xs-12" dir="rtl" style="text-align: center">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2 style="float: right">הסר קורס</h2>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+                            <form action="check.php" method="post" accept-charset="utf-8">
+                                <label for="semester">סמסטר</label>
+                                <input type="radio" name="semester" value="ד">   ד'
+                                <input type="radio" name="semester" value="ה">ה'
+                                <input type="radio" name="semester" value="ו">  ו'
+                                <label for="course">קורס</label>
+                                <select name="course" style="height: 25px" id="course" required>
+                                    <option></option>
+                                    <option value="אבגד">PHP שמות קורסים</option>
+                                </select>
+                                <input name="email" style="display: none" value="<?php echo $email ?>">
+                                <input type="submit"  class="btn btn btn-success" value="הסר">
+                                <button type="button" onclick="closeRemoveForm()" class="btn btn btn-danger">סגור</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="display: none" id="EditForm">
+                <div class="col-md-12 col-sm-12 col-xs-12" dir="rtl" style="text-align: center">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2 style="float: right">ערוך קורס</h2>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+                            <form action="check.php" method="post" accept-charset="utf-8">
+                                <label for="semester">סמסטר</label>
+                                <input type="radio" name="semester" value="ד">   ד'
+                                <input type="radio" name="semester" value="ה">ה'
+                                <input type="radio" name="semester" value="ו">  ו'
+                                <label for="course">קורס</label>
+                                <select name="course" style="height: 25px" id="course" required>
+                                    <option></option>
+                                    <option value="אבגד">PHP שמות קורסים</option>
+                                </select>
+                                <label for="class">שיעורים</label>
+                                <input name="class" id="class" type="number" style="width: 5%" required>
+                                <label for="hours">שעות</label>
+                                <input type="number" name="hours" id="hours" style="width: 5%" required>
+                                <label for="points">נק"ז</label>
+                                <input type="number" name="points" id="points" style="width: 5%" required>
+                                <input name="email" style="display: none" value="<?php echo $email ?>">
+                                <input type="submit"  class="btn btn btn-success" style="width: 54px" value="ערוך">
+                                <button type="button" onclick="closeEditForm()" class="btn btn btn-danger">סגור</button>
                             </form>
                         </div>
                     </div>
