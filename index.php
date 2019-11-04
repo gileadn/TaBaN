@@ -18,14 +18,14 @@
     <link href="vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- Animate.css -->
     <link href="vendors/animate.css/animate.min.css" rel="stylesheet">
-    
+    <link href="production/css/loginButton.css" rel="stylesheet">
     <link href="vendors/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet">
     <link href="vendors/fullcalendar/dist/fullcalendar.print.css" rel="stylesheet" media="print">
     <!-- Custom Theme Style -->
     <link href="build/css/custom.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
 </head>
 <body class="login" dir="rtl" style="background-image: url('production/images/backgroundLogin.jpg');background-repeat: no-repeat;background-size: cover;">
-<button id="signout-button" onclick="handleSignOutClick()">Sign out</button>
 <div>
     <div>
         <div>
@@ -33,11 +33,15 @@
                         <source src="production/video/TimlapseClouds1Videvo.mov" type="video/mp4">
                     </video>
                     <h1>
-                        <div style="color: #000000;font-size: 300%;font-family: cursive;margin-top: 3%;text-align: center;">HASKALA</div>
+                        <div style="color: #000000;font-size: 300%;font-family: cursive;text-align: center;">HASKALA</div>
                     </h1>
                     <div style="text-align: center">
-                        <form action="loginPHP.php" method="post">
-                            <input type="submit" name="submit" id="signin-button" class="btn btn-default submit"  style="border-radius: 100%;padding: 10%;background-image: url('production/images/GoogleLogoLogin.jpg');background-repeat: no-repeat;background-size: cover;">
+                        <form id="my_form" action="loginPHP.php" method="post">
+                            <input type="submit" value="" name="submit" id="signin-button" class="btn btn-default submit"  style="height: 10px; border-radius: 100%;padding: 10%;background-image: url('production/images/GoogleLogoLogin.jpg');background-repeat: no-repeat;background-size: cover;">
+                            
+                            <!--<a href="javascript:{}" onclick="document.getElementById('my_form').submit();" class="boton">
+                                Sign In
+                            </a>-->
                         </form>
                     </div>
                     <div class="clearfix"></div>
@@ -59,5 +63,7 @@
 <script src="vendors/fullcalendar/dist/fullcalendar.min.js"></script>
 <!-- Custom Theme Scripts -->
 <script src="build/js/custom.min.js"></script>
+<!--button-->
+<script src="production/js/LoginButton.js"></script>
 </body>
 </html>

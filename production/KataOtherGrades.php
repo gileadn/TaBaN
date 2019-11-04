@@ -113,12 +113,12 @@
                     <div class="count">74%</div>
                 </div>
                 <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-                    <span class="count_top"><i class="fa fa-thumbs-o-down"></i> כמה לירידה</span>
+                    <span class="count_top"><i class="fa fa-thumbs-o-down"></i> לעמידה ביעד</span>
                     <div class="count red">2.46</div>
                     <span class="count_bottom">ל84.53</span>
                 </div>
                 <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-                    <span class="count_top"><i class="fa fa-thumbs-o-up"></i></i> כמה לעליה</span>
+                    <span class="count_top"><i class="fa fa-thumbs-o-up"></i></i> ממוצע יעד</span>
                     <div class="count green">1.25</div>
                     <span class="count_bottom">ל87.34</span>
                 </div>
@@ -128,24 +128,45 @@
                     <span class="count_bottom">מתוך 14</span>
                 </div>
                 <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-                    <span class="count_top"><i class="fa fa-line-chart"></i> נק"ז מצטבר </span>
+                    <span class="count_top"><i class="fa fa-line-chart"></i> ממוצע קורסים קודמים </span>
                     <div class="count">89.5</div>
-                    <span class="count_bottom">מתוך 120</span>
+                    <span class="count_bottom">מתוך 6 קורסים אחורה</span>
                 </div>
                 <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-                    <span class="count_top"><i class="fa fa-graduation-cap"></i> ממוצע </span>
+                    <span class="count_top"><i class="fa fa-graduation-cap"></i> ממוצע של המגמה </span>
                     <div class="count">86.34</div>
-                    <span class="count_bottom"></i>84.23</i> סמסטר קודם</span>
+                    <span class="count_bottom"></i>85.4</i> קורס קודם</span>
                 </div>
             </div>
             <!-- /top tiles -->
             <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-12" dir="rtl" style="text-align: center">
+                <div class="col-md-12 col-sm-12 col-xs-12" style="text-align: center;">
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-default">
+                            <input type="radio" name="options" id="option1"> סמסטר 1'
+                        </label>
+                        <label class="btn btn-default">
+                            <input type="radio" name="options" id="option2"> סמסטר ה'
+                        </label>
+                        <label class="btn btn-default active">
+                            <input type="radio" name="options" id="option3"> סמסטר ד'
+                        </label>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <br>
+            </div>
+            <div class="row" >
+                <div class="col-md-12 col-sm-12 col-xs-12" dir="rtl" style="text-align: center">
                     <div class="x_panel">
                         <div class="x_title">
-                            <h2 style="float: right">ציונים </h2>
-                            <ul class="nav navbar-right panel_toolbox">ערוך
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                            <h2 style="float: right">ציוני צוערים</h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                </li>
                             </ul>
                             <div class="clearfix"></div>
                         </div>
@@ -153,10 +174,16 @@
                             <table class="table table-hover">
                                 <thead>
                                 <tr>
-                                    <th>#</th>
+                                    <th>שם</th>
                                     <th style="text-align: center">קורס</th>
-                                    <th style="text-align: center">נק"ז</th>
-                                    <th style="text-align: center">ציון</th>
+                                    <th style="text-align: center">קורס</th>
+                                    <th style="text-align: center">קורס</th>
+                                    <th style="text-align: center">קורס</th>
+                                    <th style="text-align: center">קורס</th>
+                                    <th style="text-align: center">קורס</th>
+                                    <th style="text-align: center">קורס</th>
+                                    <th style="text-align: center">קורס</th>
+                                    <th style="text-align: center">קורס</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -180,71 +207,21 @@
                                 </tr>
                                 </tbody>
                             </table>
-                        
                         </div>
                     </div>
                 </div>
+                </div>
+            <div class="row" style="text-align: center">
                 <div class="col-md-6 col-sm-6 col-xs-12" dir="rtl" style="text-align: center">
                     <div class="x_panel">
                         <div class="x_title">
                             <h2 style="float: right">יעדים  אישיים </h2>
-                            <ul class="nav navbar-right panel_toolbox">ערוך
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                            </ul>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="x_content" >
-                            <table class="table table-hover">
-                                <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th style="text-align: center">קורס</th>
-                                    <th style="text-align: center">נק"ז</th>
-                                    <th style="text-align: center">ציון מטרה</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>גיודזיה</td>
-                                    <td>3</td>
-                                    <td><input type="number" style="width: 20%"></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>משפטים</td>
-                                    <td>3</td>
-                                    <td>94</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>BI</td>
-                                    <td>3.5</td>
-                                    <td>76</td>
-                                </tr>
-                                <tr>
-                                    <b>
-                                        <th scope="row"><b>4</b></th>
-                                        <td><b>ממוצע</b></td>
-                                        <td><b>30</b></td>
-                                        <td><b>80.3</b></td>
-                                    </b>
-                                </tr>
-                                </tbody>
-                            </table>
-                        
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <br />
-            <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-12" dir="rtl" style="text-align: center">
-                    <div class="x_panel">
-                        <div class="x_title">
-                            <h2 style="float: right">יעדים  אישיים </h2>
-                            <ul class="nav navbar-right panel_toolbox">ערוך
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                </li>
                             </ul>
                             <div class="clearfix"></div>
                         </div>
@@ -295,8 +272,9 @@
             <!-- /page content -->
         </div>
         <footer>
-            <div class="pull-right">
-                השכלה - מערכת לניהול חיי צוערים. תוכנתה ע"י תם בן שפר, שחר בורג וגלעד נבו קורס 180
+            <div class="pull-right" dir="rtl">
+              השכלה היא מערכת לניהול חיי צוערים.  <br>
+                פותחה ע"י שחר בורג, תם בן שפר (תב"ש) וגלעד נבו - קורס 180.
             </div>
             <div class="clearfix"></div>
         </footer>

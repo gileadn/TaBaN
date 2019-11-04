@@ -107,12 +107,57 @@
         <!-- page content -->
         <div class="right_col" role="main" dir="rtl">
             <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-12" dir="rtl" style="text-align: center">
+                <div class="col-md-12 col-sm-12 col-xs-12" dir="rtl" style="text-align: center">
+                    <a onclick="openAddForm()" class="btn btn-app" style="background-color: lightgreen;">
+                        <i class="fa fa-plus"></i> הוסף
+                    </a>
+                    <a onclick="openRemoveForm()" class="btn btn-app" style="background-color: lightsalmon;">
+                        <i class="fa fa-minus"></i> הסר
+                    </a>
+                    <a onclick="openEditForm()" class="btn btn-app" style="background-color: lightskyblue;">
+                        <i class="fa fa-edit"></i> ערוך
+                    </a>
+                </div>
+            </div>
+            <div class="row" style="display: none" id="AddForm">
+                <div class="col-md-12 col-sm-12 col-xs-12" dir="rtl" style="text-align: center">
                     <div class="x_panel">
                         <div class="x_title">
-                            <h2 style="float: right">ציונים </h2>
-                            <ul class="nav navbar-right panel_toolbox">ערוך
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                            <h2 style="float: right">הוסף קורס</h2>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+                            <form action="check.php" method="post" accept-charset="utf-8">
+                                <label for="semester">סמסטר</label>
+                                <input type="radio" name="semester" value="ד">   ד'
+                                <input type="radio" name="semester" value="ה">ה'
+                                <input type="radio" name="semester" value="ו">  ו'
+                                <label for="course">קורס</label>
+                                <input name="course" id="course" required>
+                                <label for="class">שיעורים</label>
+                                <input name="class" id="class" type="number" style="width: 5%" required>
+                                <label for="hours">שעות</label>
+                                <input type="number" name="hours" id="hours" style="width: 5%" required>
+                                <label for="points">נק"ז</label>
+                                <input type="number" name="points" id="points" style="width: 5%" required>
+                                <input type="submit"  class="btn btn btn-success" value="הוסף">
+                                <button type="button" onclick="closeAddForm()" class="btn btn btn-danger">סגור</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12" dir="rtl" style="text-align: center">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2 style="float: right">סמסטר ד'</h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                </li>
                             </ul>
                             <div class="clearfix"></div>
                         </div>
@@ -122,8 +167,9 @@
                                 <tr>
                                     <th>#</th>
                                     <th style="text-align: center">קורס</th>
+                                    <th style="text-align: center">שיעורים</th>
+                                    <th style="text-align: center">שעות</th>
                                     <th style="text-align: center">נק"ז</th>
-                                    <th style="text-align: center">ציון</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -132,11 +178,13 @@
                                     <td>גיודזיה</td>
                                     <td>3</td>
                                     <td>89</td>
+                                    <td>94</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">2</th>
                                     <td>משפטים</td>
                                     <td>3</td>
+                                    <td>94</td>
                                     <td>94</td>
                                 </tr>
                                 <tr>
@@ -144,58 +192,7 @@
                                     <td>BI</td>
                                     <td>3.5</td>
                                     <td>76</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-6 col-xs-12" dir="rtl" style="text-align: center">
-                    <div class="x_panel">
-                        <div class="x_title">
-                            <h2 style="float: right">יעדים  אישיים </h2>
-                            <ul class="nav navbar-right panel_toolbox">ערוך
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                            </ul>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="x_content" >
-                            <table class="table table-hover">
-                                <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th style="text-align: center">קורס</th>
-                                    <th style="text-align: center">נק"ז</th>
-                                    <th style="text-align: center">ציון מטרה</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>גיודזיה</td>
-                                    <td>3</td>
-                                    <td><input type="number" style="width: 20%"></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>משפטים</td>
-                                    <td>3</td>
                                     <td>94</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>BI</td>
-                                    <td>3.5</td>
-                                    <td>76</td>
-                                </tr>
-                                <tr>
-                                    <b>
-                                        <th scope="row"><b>4</b></th>
-                                        <td><b>ממוצע</b></td>
-                                        <td><b>30</b></td>
-                                        <td><b>80.3</b></td>
-                                    </b>
                                 </tr>
                                 </tbody>
                             </table>
@@ -204,14 +201,17 @@
                     </div>
                 </div>
             </div>
-            <br />
-            <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-12" dir="rtl" style="text-align: center">
+                <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12" dir="rtl" style="text-align: center">
                     <div class="x_panel">
                         <div class="x_title">
-                            <h2 style="float: right">יעדים  אישיים </h2>
-                            <ul class="nav navbar-right panel_toolbox">ערוך
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                            <h2 style="float: right">סמסטר ה'</h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                </li>
                             </ul>
                             <div class="clearfix"></div>
                         </div>
@@ -221,8 +221,9 @@
                                 <tr>
                                     <th>#</th>
                                     <th style="text-align: center">קורס</th>
+                                    <th style="text-align: center">שיעורים</th>
+                                    <th style="text-align: center">שעות</th>
                                     <th style="text-align: center">נק"ז</th>
-                                    <th style="text-align: center">ציון מטרה</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -230,12 +231,13 @@
                                     <th scope="row">1</th>
                                     <td>גיודזיה</td>
                                     <td>3</td>
-                                    <td><input type="number" style="width: 20%"></td>
+                                    <td>9</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">2</th>
                                     <td>משפטים</td>
                                     <td>3</td>
+                                    <td>94</td>
                                     <td>94</td>
                                 </tr>
                                 <tr>
@@ -243,6 +245,7 @@
                                     <td>BI</td>
                                     <td>3.5</td>
                                     <td>76</td>
+                                    <td>94</td>
                                 </tr>
                                 <tr>
                                     <b>
@@ -250,6 +253,70 @@
                                         <td><b>ממוצע</b></td>
                                         <td><b>30</b></td>
                                         <td><b>80.3</b></td>
+                                        <td>94</td>
+                                    </b>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12" dir="rtl" style="text-align: center">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2 style="float: right">סמסטר ו'</h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content" >
+                            <table class="table table-hover">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th style="text-align: center">קורס</th>
+                                    <th style="text-align: center">שיעורים</th>
+                                    <th style="text-align: center">שעות</th>
+                                    <th style="text-align: center">נק"ז</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>גיודזיה</td>
+                                    <td>3</td>
+                                    <td>9</td>
+                                    <td>94</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>משפטים</td>
+                                    <td>3</td>
+                                    <td>94</td>
+                                    <td>94</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>BI</td>
+                                    <td>3.5</td>
+                                    <td>76</td>
+                                    <td>94</td>
+                                </tr>
+                                <tr>
+                                    <b>
+                                        <th scope="row"><b>4</b></th>
+                                        <td><b>ממוצע</b></td>
+                                        <td><b>30</b></td>
+                                        <td><b>80.3</b></td>
+                                        <td>94</td>
                                     </b>
                                 </tr>
                                 </tbody>
@@ -262,8 +329,9 @@
             <!-- /page content -->
         </div>
         <footer>
-            <div class="pull-right">
-                השכלה - מערכת לניהול חיי צוערים. תוכנתה ע"י תם בן שפר, שחר בורג וגלעד נבו קורס 180
+            <div class="pull-right" dir="rtl">
+                השכלה היא מערכת לניהול חיי צוערים.  <br>
+                פותחה ע"י שחר בורג, תם בן שפר (תב"ש) וגלעד נבו - קורס 180.
             </div>
             <div class="clearfix"></div>
         </footer>
@@ -310,6 +378,32 @@
 
 <!-- Custom Theme Scripts -->
 <script src="../build/js/custom.min.js"></script>
+<script>
+  function openAddForm() {
+    document.getElementById("AddForm").style.display = "block";
+    document.getElementById("RemoveForm").style.display = "none";
+    document.getElementById("EditForm").style.display = "none";
+  }
+  function openRemoveForm() {
+    document.getElementById("RemoveForm").style.display = "block";
+    document.getElementById("AddForm").style.display = "none";
+    document.getElementById("EditForm").style.display = "none";
+  }
+  function openEditForm() {
+    document.getElementById("EditForm").style.display = "block";
+    document.getElementById("AddForm").style.display = "none";
+    document.getElementById("RemoveForm").style.display = "none";
+  }
+  function closeAddForm() {
+    document.getElementById("AddForm").style.display = "none";
+  }
+  function closeRemoveForm() {
 
+    document.getElementById("RemoveForm").style.display = "none";
+  }
+  function closeEditForm() {
+    document.getElementById("EditForm").style.display = "none";
+  }
+</script>
 </body>
 </html>

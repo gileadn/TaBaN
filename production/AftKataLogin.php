@@ -147,15 +147,30 @@
                 </div>
             </div>
             <!-- /top tiles -->
+            <div class="row">
+                <div class="col-md-6 col-sm-12 col-xs-12" dir="rtl" style="text-align: center">
+                    <a onclick="openAddForm()" class="btn btn-app" style="background-color: lightgreen;">
+                        <i class="fa fa-plus"></i> הוסף
+                    </a>
+                    <a onclick="openRemoveForm()" class="btn btn-app" style="background-color: lightsalmon;">
+                        <i class="fa fa-minus"></i> הסר
+                    </a>
+                    <a onclick="openEditForm()" class="btn btn-app" style="background-color: lightskyblue;">
+                        <i class="fa fa-edit"></i> ערוך
+                    </a>
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12 " dir="rtl" style="text-align: center">
+                    <a onclick="openEditForm()" class="btn btn-app" style="background-color: lightskyblue;">
+                        <i class="fa fa-edit"></i> ערוך
+                    </a>
+                </div>
+            </div>
             <!--טבלת ציונים -->
             <div class="row">
                 <div class="col-md-6 col-sm-6 col-xs-12" dir="rtl" style="text-align: center">
                     <div class="x_panel">
                         <div class="x_title">
                             <h2 style="float: right">ציונים </h2>
-                            <ul class="nav navbar-right panel_toolbox">ערוך
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                            </ul>
                             <div class="clearfix"></div>
                         </div>
                         <div class="x_content" >
@@ -189,9 +204,6 @@
                     <div class="x_panel">
                         <div class="x_title">
                             <h2 style="float: right">יעדים  אישיים </h2>
-                            <ul class="nav navbar-right panel_toolbox">ערוך
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                            </ul>
                             <div class="clearfix"></div>
                         </div>
                         <div class="x_content" >
@@ -233,8 +245,9 @@
             <!-- /page content -->
         </div>
         <footer>
-            <div class="pull-right">
-                השכלה - מערכת לניהול חיי צוערים. תוכנתה ע"י תם בן שפר, שחר בורג וגלעד נבו קורס 180
+            <div class="pull-right" dir="rtl">
+                השכלה היא מערכת לניהול חיי צוערים.  <br>
+                פותחה ע"י שחר בורג, תם בן שפר (תב"ש) וגלעד נבו - קורס 180.
             </div>
             <div class="clearfix"></div>
         </footer>

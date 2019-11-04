@@ -29,12 +29,6 @@
                 else{
                     header("Location: production/Register.php");
                 }
-                
-    
-                //while($row = $num->fetch_assoc()) {
-                //    echo $row["email"];
-                //}
-                //header("Location: production/AftKataLogin.php");
             } else {
                 $auth_url = $client->createAuthUrl();
                 header('Location: ' . filter_var($auth_url, FILTER_SANITIZE_URL));

@@ -170,27 +170,17 @@
                                     <div class="clearfix"></div>
                                     <h3>זמן סיום</h3>
                                     <div>
-                                        תאריך
+                                        זמן סיום
                                         <div class="form-group" dir="ltr">
-                                            <div class="input-group date" id="myDatepicker2">
+                                            <div class="input-group date" id="myDatepicker4">
                                                 <input type="text" class="form-control">
                                                 <span class="input-group-addon">
-                               <span class="glyphicon glyphicon-calendar"></span>
-                            </span>
+                                                            <span class="glyphicon glyphicon-calendar"></span>
+                                                        </span>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="clearfix"></div>
-                                    <div>
-                                        שעה
-                                        <div class="form-group" dir="ltr">
-                                            <div class="input-group date" id="myDatepicker3">
-                                                <input type="text" class="form-control">
-                                                <span class="input-group-addon">
-                               <span class="glyphicon glyphicon-calendar"></span></span>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    
                                     <div class="clearfix"></div>
                                     <div style="display: inline-block;">
                                         <h2>כמות משתתפים</h2>
@@ -221,8 +211,9 @@
             <!-- /page content -->
         </div>
         <footer>
-            <div class="pull-right">
-                השכלה - מערכת לניהול חיי צוערים. תוכנתה ע"י תם בן שפר, שחר בורג וגלעד נבו קורס 180
+            <div class="pull-right" dir="rtl">
+              השכלה היא מערכת לניהול חיי צוערים.  <br>
+                פותחה ע"י שחר בורג, תם בן שפר (תב"ש) וגלעד נבו - קורס 180.
             </div>
             <div class="clearfix"></div>
         </footer>

@@ -295,8 +295,9 @@
             <!-- /page content -->
         </div>
         <footer>
-            <div class="pull-right">
-                השכלה - מערכת לניהול חיי צוערים. תוכנתה ע"י תם בן שפר, שחר בורג וגלעד נבו קורס 180
+            <div class="pull-right" dir="rtl">
+              השכלה היא מערכת לניהול חיי צוערים.  <br>
+                פותחה ע"י שחר בורג, תם בן שפר (תב"ש) וגלעד נבו - קורס 180.
             </div>
             <div class="clearfix"></div>
         </footer>

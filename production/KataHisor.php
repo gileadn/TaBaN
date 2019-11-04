@@ -20,7 +20,6 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
-    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="images/favicon.ico" type="image/ico" />
@@ -106,28 +105,133 @@
         
         <!-- page content -->
         <div class="right_col" role="main" dir="rtl">
-            <br />
             <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-12" dir="rtl" style="text-align: center">
+                <div class="col-md-12 col-sm-12 col-xs-12" style="text-align: center;">
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-default">
+                            <input type="radio" name="options" id="option1"> סמסטר 1'
+                        </label>
+                        <label class="btn btn-default">
+                            <input type="radio" name="options" id="option2"> סמסטר ה'
+                        </label>
+                        <label class="btn btn-default active">
+                            <input type="radio" name="options" id="option3"> סמסטר ד'
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12" dir="rtl" style="text-align: center">
+                    <a onclick="openAddForm()" class="btn btn-app" style="background-color: lightgreen;">
+                        <i class="fa fa-plus"></i> הוסף
+                    </a>
+                    <a onclick="openRemoveForm()" class="btn btn-app" style="background-color: lightsalmon;">
+                        <i class="fa fa-minus"></i> הסר
+                    </a>
+                    <a onclick="openEditForm()" class="btn btn-app" style="background-color: lightskyblue;">
+                        <i class="fa fa-edit"></i> ערוך
+                    </a>
+                </div>
+            </div>
+            <div class="row" style="display: none" id="AddForm">
+                <div class="col-md-12 col-sm-12 col-xs-12" dir="rtl" style="text-align: center">
                     <div class="x_panel">
                         <div class="x_title">
-                            <h2 style="float: right">חיסורים </h2>
+                            <h2 style="float: right">הוסף חיסור</h2>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+                            <form action="check.php" method="post" accept-charset="utf-8">
+                                <label for="date">תאריך</label>
+                                <input type="date" name="date" id="date" required style="width: 120px;">
+                                <label for="hour">שעה</label>
+                                <input type="time" id="hour" name="hour" required>
+                                <label for="name">צוער</label>
+                                <select name="name" id="name" required>
+                                    <option></option>
+                                    <option value="אבגד">PHP שמות צוערים</option>
+                                </select>
+                                <label for="toran">תורנות</label>
+                                <select name="toran" id="toran" required>
+                                    <option></option>
+                                    <option value="אא">קתפ"ט</option>
+                                    <option value="בב">מטבח</option>
+                                    <option value="גג">משיכת ירקות</option>
+                                    <option value="דד"> אחר</option>
+                                </select>
+                                <label for="ClassHours">שעות על שיעור</label>
+                                <input type="number" name="ClassHours" style="width: 5%" id="ClassHours" required>
+                                <label for="class">שיעור</label>
+                                <select name="class" id="class" required>
+                                    <option></option>
+                                    <option value="אא">שיעורים PHP</option>
+                                </select>
+                                <label for="FreeHours">שעות על חופשי</label>
+                                <input type="number" name="FreeHours" style="width: 5%" id="FreeHours" minlength="1" required>
+                                <input type="submit"  class="btn btn btn-success" value="הוסף">
+                                <button type="button" onclick="closeAddForm()" class="btn btn btn-danger">סגור</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="display: none" id="RemoveForm">
+                <div class="col-md-12 col-sm-12 col-xs-12" dir="rtl" style="text-align: center">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2 style="float: right">הסר חיסור</h2>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+                            <form action="check.php" method="post" accept-charset="utf-8">
+                                <label for="date">תאריך</label>
+                                <input type="date" name="date" id="date" required >
+                                <label for="hour">שעה</label>
+                                <input type="time" id="hour" name="hour" required>
+                                <label for="name">צוער</label>
+                                <select name="name" id="name" required>
+                                    <option></option>
+                                    <option value="אבגד">PHP שמות צוערים</option>
+                                <input type="submit"  class="btn btn btn-success" value="הסר">
+                                <button type="button" onclick="closeRemoveForm()" class="btn btn btn-danger">סגור</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12" dir="rtl" style="text-align: center">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2 style="float: right">חיסורים</h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                </li>
+                            </ul>
                             <div class="clearfix"></div>
                         </div>
                         <div class="x_content" >
                             <table class="table table-hover">
                                 <thead>
                                 <tr>
-                                    <th>#</th>
-                                    <th style="text-align: center">שם</th>
-                                    <th style="text-align: center">מס שעות</th>
-                                    <th style="text-align: center"> סוג אילוץ</th>
+                                    <th style="text-align: center">תאריך</th>
+                                    <th style="text-align: center">שעה</th>
+                                    <th style="text-align: center"> צוער</th>
+                                    <th style="text-align: center">סוג תורנות</th>
+                                    <th style="text-align: center">שיעור</th>
+                                    <th style="text-align: center">שעות על שיעור</th>
+                                    <th style="text-align: center"> שעות על חופשי</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr>
                                     <th scope="row">1</th>
-                                    <td>גיודזיה</td>
+                                    <td contenteditable='true'>>גיודזיה</td>
                                     <td>3</td>
                                     <td><input type="number" style="width: 20%"></td>
                                 </tr>
@@ -161,8 +265,9 @@
             <!-- /page content -->
         </div>
         <footer>
-            <div class="pull-right">
-                השכלה - מערכת לניהול חיי צוערים. תוכנתה ע"י תם בן שפר, שחר בורג וגלעד נבו קורס 180
+            <div class="pull-right" dir="rtl">
+              השכלה היא מערכת לניהול חיי צוערים.  <br>
+                פותחה ע"י שחר בורג, תם בן שפר (תב"ש) וגלעד נבו - קורס 180.
             </div>
             <div class="clearfix"></div>
         </footer>
@@ -209,6 +314,32 @@
 
 <!-- Custom Theme Scripts -->
 <script src="../build/js/custom.min.js"></script>
+<script>
+  function openAddForm() {
+    document.getElementById("AddForm").style.display = "block";
+    document.getElementById("RemoveForm").style.display = "none";
+    document.getElementById("EditForm").style.display = "none";
+  }
+  function openRemoveForm() {
+    document.getElementById("RemoveForm").style.display = "block";
+    document.getElementById("AddForm").style.display = "none";
+    document.getElementById("EditForm").style.display = "none";
+  }
+  function openEditForm() {
+    document.getElementById("EditForm").style.display = "block";
+    document.getElementById("AddForm").style.display = "none";
+    document.getElementById("RemoveForm").style.display = "none";
+  }
+  function closeAddForm() {
+    document.getElementById("AddForm").style.display = "none";
+  }
+  function closeRemoveForm() {
 
+    document.getElementById("RemoveForm").style.display = "none";
+  }
+  function closeEditForm() {
+    document.getElementById("EditForm").style.display = "none";
+  }
+</script>
 </body>
 </html>

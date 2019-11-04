@@ -52,11 +52,8 @@
         <div class="col-md-3 left_col" style="display: block">
             <div class="left_col scroll-view">
                 <a href="AftKataLogin.php" class="site_title" style="padding-bottom: 70px;"><img src="images/logo2.png" height="50" width="50"/><span>HASKALA</span></a>
-                
                 <div class="clearfix"></div>
-                
                 <br />
-                
                 <!-- sidebar menu -->
                 <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                     <div class="menu_section" dir="rtl">
@@ -107,56 +104,29 @@
         <!-- page content -->
         <div class="right_col" role="main" dir="rtl">
             <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-12" dir="rtl" style="text-align: center">
-                    <div class="x_panel">
-                        <div class="x_title">
-                            <h2 style="float: right">ציונים </h2>
-                            <ul class="nav navbar-right panel_toolbox">ערוך
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                            </ul>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="x_content" >
-                            <table class="table table-hover">
-                                <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th style="text-align: center">קורס</th>
-                                    <th style="text-align: center">נק"ז</th>
-                                    <th style="text-align: center">ציון</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>גיודזיה</td>
-                                    <td>3</td>
-                                    <td>89</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>משפטים</td>
-                                    <td>3</td>
-                                    <td>94</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>BI</td>
-                                    <td>3.5</td>
-                                    <td>76</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        
-                        </div>
-                    </div>
+                <div class="col-md-12 col-sm-12 col-xs-12" dir="rtl" style="text-align: center">
+                    <a class="btn btn-app" style="background-color: lightgreen;">
+                        <i class="fa fa-plus"></i> הוסף
+                    </a>
+                    <a class="btn btn-app" style="background-color: lightsalmon;">
+                        <i class="fa fa-minus"></i> הסר
+                    </a>
+                    <a class="btn btn-app" style="background-color: lightskyblue;">
+                        <i class="fa fa-edit"></i> ערוך
+                    </a>
                 </div>
-                <div class="col-md-6 col-sm-6 col-xs-12" dir="rtl" style="text-align: center">
+            </div>
+            <div class="row"
+                <div class="col-md-12 col-sm-12 col-xs-12" dir="rtl" style="text-align: center">
                     <div class="x_panel">
                         <div class="x_title">
-                            <h2 style="float: right">יעדים  אישיים </h2>
-                            <ul class="nav navbar-right panel_toolbox">ערוך
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                            <h2 style="float: right">ביטולים מיוחדים</h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                </li>
                             </ul>
                             <div class="clearfix"></div>
                         </div>
@@ -165,9 +135,15 @@
                                 <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th style="text-align: center">קורס</th>
-                                    <th style="text-align: center">נק"ז</th>
-                                    <th style="text-align: center">ציון מטרה</th>
+                                    <th style="text-align: center">שבוע</th>
+                                    <th style="text-align: center">תאריך</th>
+                                    <th style="text-align: center">יום</th>
+                                    <th style="text-align: center">שיעור</th>
+                                    <th style="text-align: center">שעות</th>
+                                    <th style="text-align: center">סיבת ביטול</th>
+                                    <th style="text-align: center">ח"א\אוניברסיטה</th>
+                                    <th style="text-align: center">שבוע השלמה</th>
+                                    <th style="text-align: center">תאריך השלמה</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -175,7 +151,7 @@
                                     <th scope="row">1</th>
                                     <td>גיודזיה</td>
                                     <td>3</td>
-                                    <td><input type="number" style="width: 20%"></td>
+                                    <td>33</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">2</th>
@@ -203,67 +179,13 @@
                         </div>
                     </div>
                 </div>
-            </div>
             <br />
-            <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-12" dir="rtl" style="text-align: center">
-                    <div class="x_panel">
-                        <div class="x_title">
-                            <h2 style="float: right">יעדים  אישיים </h2>
-                            <ul class="nav navbar-right panel_toolbox">ערוך
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                            </ul>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="x_content" >
-                            <table class="table table-hover">
-                                <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th style="text-align: center">קורס</th>
-                                    <th style="text-align: center">נק"ז</th>
-                                    <th style="text-align: center">ציון מטרה</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>גיודזיה</td>
-                                    <td>3</td>
-                                    <td><input type="number" style="width: 20%"></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>משפטים</td>
-                                    <td>3</td>
-                                    <td>94</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>BI</td>
-                                    <td>3.5</td>
-                                    <td>76</td>
-                                </tr>
-                                <tr>
-                                    <b>
-                                        <th scope="row"><b>4</b></th>
-                                        <td><b>ממוצע</b></td>
-                                        <td><b>30</b></td>
-                                        <td><b>80.3</b></td>
-                                    </b>
-                                </tr>
-                                </tbody>
-                            </table>
-                        
-                        </div>
-                    </div>
-                </div>
-            </div>
             <!-- /page content -->
         </div>
         <footer>
-            <div class="pull-right">
-                השכלה - מערכת לניהול חיי צוערים. תוכנתה ע"י תם בן שפר, שחר בורג וגלעד נבו קורס 180
+            <div class="pull-right" dir="rtl">
+              השכלה היא מערכת לניהול חיי צוערים.  <br>
+                פותחה ע"י שחר בורג, תם בן שפר (תב"ש) וגלעד נבו - קורס 180.
             </div>
             <div class="clearfix"></div>
         </footer>
