@@ -14,6 +14,7 @@
     $me= new Google_Service_Plus($client);
     $email = $me->people->get('me')->getEmails();
     $email = $email[0]['value'];
+    $semeter = 4;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -144,6 +145,17 @@
                 </div>
             </div>
             <!-- /top tiles -->
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12" dir="rtl" style="text-align: center">
+                    <div class="btn-group">
+                        <button onclick="<?php $semeter = 4; ?>" class="btn btn-default" type="button">סמסטר ד'</button>
+                        <button onclick="<?php $semeter = 5;?>" class="btn btn-default" type="button">סמסטר ה'</button>
+                        <button onclick="<?php $semeter = 6;?>" class="btn btn-default" type="button">סמסטר ו'</button>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="clearfix"></div>
             <div class="row">
                 <div class="col-md-6 col-sm-12 col-xs-12" dir="rtl" style="text-align: center">
                     <a onclick="openAddForm()" class="btn btn-app" style="background-color: lightgreen;">
@@ -280,7 +292,7 @@
                                 <tbody>
                                 <!-- טבלת ציונים - תוכן-->
                                 <?php
-                                    $mysql_qry = "SELECT * FROM studentcourse as s join course as c on s.coursename = c.coursename where email = 'gileadn@post.bgu.ac.il' and grade>0";
+                                    $mysql_qry = "SELECT * FROM studentcourse as s join course as c on s.coursename = c.coursename where email = 'gileadn@post.bgu.ac.il' and grade>0 and ";
                                     $ans= mysqli_query($conn, $mysql_qry);
                                     while($row = mysqli_fetch_assoc($ans)) {
                                         echo '<tr>';
