@@ -105,17 +105,130 @@
         <div class="right_col" role="main" dir="rtl">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12" dir="rtl" style="text-align: center">
-                    <a class="btn btn-app" style="background-color: lightgreen;">
+                    <a  onclick="openAddForm()" class="btn btn-app" style="background-color: lightgreen;">
                         <i class="fa fa-plus"></i> הוסף
                     </a>
-                    <a class="btn btn-app" style="background-color: lightsalmon;">
+                    <a onclick="openRemoveForm()" class="btn btn-app" style="background-color: lightsalmon;">
                         <i class="fa fa-minus"></i> הסר
                     </a>
-                    <a class="btn btn-app" style="background-color: lightskyblue;">
+                    <a onclick="openEditForm()" class="btn btn-app" style="background-color: lightskyblue;">
                         <i class="fa fa-edit"></i> ערוך
                     </a>
                 </div>
             </div>
+            <div class="row" style="display: none" id="AddForm">
+                <div class="col-md-12 col-sm-12 col-xs-12" dir="rtl" style="text-align: center">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2 style="float: right">הוסף ביטול</h2>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+                            <form action="check.php" method="post" style="text-align: center" accept-charset="utf-8">
+                                <label for="week">שבוע</label>
+                                <input type="number" name="number" style="width: 70px;"  id="number" required >
+                                <label for="date">תאריך</label>
+                                <input type="date" name="date" id="date" required style="width: 130px;">
+                                <label for="day">יום</label>
+                                <input type="day" id="day" style="width: 70px;"  name="day" required>
+                                <label for="course">שיעור</label>
+                                <select name="course" style="height: 25px" id="course" required>
+                                    <option></option>
+                                    <option value="אבגד">PHP שמות קורסים</option>
+                                </select>
+                                <label for="hours">שעת התחלה</label>
+                                <input type="time" name="hours" style="width: 70px;"  id="hours" required >
+                                <label for="hours">כמות שעות</label>
+                                <input type="time" name="hours" style="width: 70px;"  id="hours" required >
+                                </br>
+                                <label for="reaso">סיבת ביטול</label>
+                                <input type="reaso" name="reaso" id="reaso" required >
+                                <label for="uniha">ח"א/אוניברסיטה</label>
+                                <select name="uniha"  style="height: 25px" id="uniha" required>
+                                    <option></option>
+                                    <option value="אא">ח"א</option>
+                                    <option value="בב">אוניברסיטה</option>
+                                </select>
+                                <label for="week2">שבוע השלמה</label>
+                                <input type="week2" name="week2"style="width: 70px;"  id="week2" required>
+                                <input name="email" style="display: none" value="<?php echo $email ?>">
+                                <input type="submit"  class="btn btn btn-success" value="הוסף">
+                                <button type="button" onclick="closeAddForm()" class="btn btn btn-danger">סגור</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="display: none" id="RemoveForm">
+                <div class="col-md-12 col-sm-12 col-xs-12" dir="rtl" style="text-align: center">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2 style="float: right">הסר ביטול</h2>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+                            <form action="check.php" method="post" accept-charset="utf-8">
+                                <label for="date">תאריך</label>
+                                <input type="date" name="date" id="date" required >
+                                <label for="course">שיעור</label>
+                                <select name="course" style="height: 25px" id="course" required>
+                                    <option></option>
+                                    <option value="אבגד">PHP שמות קורסים</option>
+                                </select>
+                                <label for="hours">שעת התחלה</label>
+                                <input type="time" name="hours" style="width: 70px;"  id="hours" required >
+                                <input name="email" style="display: none" value="<?php echo $email ?>">
+                                <input type="submit"  class="btn btn btn-success" value="הסר">
+                                <button type="button" onclick="closeRemoveForm()" class="btn btn btn-danger">סגור</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="display: none" id="EditForm">
+                <div class="col-md-12 col-sm-12 col-xs-12" dir="rtl" style="text-align: center">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2 style="float: right">ערוך ביטול</h2>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+                            <form action="check.php" method="post" style="text-align: center" accept-charset="utf-8">
+                                <label for="week">שבוע</label>
+                                <input type="number" name="number" style="width: 70px;"  id="number" required >
+                                <label for="date">תאריך</label>
+                                <input type="date" name="date" id="date" required style="width: 130px;">
+                                <label for="day">יום</label>
+                                <input type="day" id="day" style="width: 70px;"  name="day" required>
+                                <label for="course">שיעור</label>
+                                <select name="course" style="height: 25px" id="course" required>
+                                    <option></option>
+                                    <option value="אבגד">PHP שמות קורסים</option>
+                                </select>
+                                <label for="hours">שעת התחלה</label>
+                                <input type="time" name="hours" style="width: 70px;"  id="hours" required >
+                                <label for="hours">כמות שעות</label>
+                                <input type="time" name="hours" style="width: 70px;"  id="hours" required >
+                                </br>
+                                <label for="reaso">סיבת ביטול</label>
+                                <input type="reaso" name="reaso" id="reaso" required >
+                                <label for="uniha">ח"א/אוניברסיטה</label>
+                                <select name="uniha"  style="height: 25px" id="uniha" required>
+                                    <option></option>
+                                    <option value="אא">ח"א</option>
+                                    <option value="בב">אוניברסיטה</option>
+                                </select>
+                                <label for="week2">שבוע השלמה</label>
+                                <input type="week2" name="week2"style="width: 70px;"  id="week2" required>
+                                <input name="email" style="display: none" value="<?php echo $email ?>">
+                                <input type="submit"  class="btn btn btn-success" style="width: 54px" value="ערוך">
+                                <button type="button" onclick="closeEditForm()" class="btn btn btn-danger">סגור</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </br>
             <div class="row"
                 <div class="col-md-12 col-sm-12 col-xs-12" dir="rtl" style="text-align: center">
                     <div class="x_panel">
@@ -232,6 +345,32 @@
 
 <!-- Custom Theme Scripts -->
 <script src="../build/js/custom.min.js"></script>
+<script>
+  function openAddForm() {
+    document.getElementById("AddForm").style.display = "block";
+    document.getElementById("RemoveForm").style.display = "none";
+    document.getElementById("EditForm").style.display = "none";
+  }
+  function openRemoveForm() {
+    document.getElementById("RemoveForm").style.display = "block";
+    document.getElementById("AddForm").style.display = "none";
+    document.getElementById("EditForm").style.display = "none";
+  }
+  function openEditForm() {
+    document.getElementById("EditForm").style.display = "block";
+    document.getElementById("AddForm").style.display = "none";
+    document.getElementById("RemoveForm").style.display = "none";
+  }
+  function closeAddForm() {
+    document.getElementById("AddForm").style.display = "none";
+  }
+  function closeRemoveForm() {
 
+    document.getElementById("RemoveForm").style.display = "none";
+  }
+  function closeEditForm() {
+    document.getElementById("EditForm").style.display = "none";
+  }
+</script>
 </body>
 </html>
