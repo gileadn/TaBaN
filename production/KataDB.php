@@ -127,7 +127,7 @@
                             <div class="clearfix"></div>
                         </div>
                         <div class="x_content">
-                            <form action="check.php" method="post" accept-charset="utf-8">
+                            <form action="php/AddCourse.php" method="post" accept-charset="utf-8">
                                 <label for="semester">סמסטר</label>
                                 <input type="radio" name="semester" value="ד">   ד'
                                 <input type="radio" name="semester" value="ה">ה'

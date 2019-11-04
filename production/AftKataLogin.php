@@ -14,7 +14,12 @@
     $me= new Google_Service_Plus($client);
     $email = $me->people->get('me')->getEmails();
     $email = $email[0]['value'];
-    $semeter = 4;
+    if(isset($_POST['semester'])) {
+        $semester = $_POST['semester'];
+    }
+    else{
+        $semester = 'ד';
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,9 +31,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="images/favicon.ico" type="image/ico" />
     <meta name="google-signin-client_id" content="1037943097707-1t6rmlkln94ubi27bkcolae7pdud0pvn.apps.googleusercontent.com">
-    
     <title>Grades</title>
-    
     <!-- Bootstrap -->
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -37,14 +40,12 @@
     <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- iCheck -->
     <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
-    
     <!-- bootstrap-progressbar -->
     <link href="../vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
     <!-- JQVMap -->
     <link href="../vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
     <!-- bootstrap-daterangepicker -->
     <link href="../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
-    
     <!-- Custom Theme Style -->
     <link href="../build/css/custom.min.css" rel="stylesheet">
 </head>
@@ -55,7 +56,7 @@
             <div class="left_col scroll-view">
                 <a href="AftKataLogin.php" class="site_title" style="padding-bottom: 70px;"><img src="images/logo2.png" height="50" width="50"/><span>HASKALA</span></a>
                 <div class="clearfix"></div>
-                <br />
+                <br/>
                 <!-- sidebar menu -->
                 <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                     <div class="menu_section" dir="rtl">
@@ -147,11 +148,27 @@
             <!-- /top tiles -->
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12" dir="rtl" style="text-align: center">
-                    <div class="btn-group">
-                        <button onclick="<?php $semeter = 4; ?>" class="btn btn-default" type="button">סמסטר ד'</button>
-                        <button onclick="<?php $semeter = 5;?>" class="btn btn-default" type="button">סמסטר ה'</button>
-                        <button onclick="<?php $semeter = 6;?>" class="btn btn-default" type="button">סמסטר ו'</button>
-                    </div>
+                    <form action="AftKataLogin.php" method="post">
+                        <div class="btn-group">
+                            <?php
+                            if($semester=='ד'){
+                            echo '<button name="semester" value="ו" class="btn btn-default" type="submit">סמסטר ו</button>';
+                            echo '<button name="semester" value="ה" class="btn btn-default" type="submit">סמסטר ה</button>';
+                            echo '<button name="semester" value="ד" class="btn btn-default active" type="submit">סמסטר ד</button>';
+                            }
+                            if($semester=='ה'){
+                                echo '<button name="semester" value="ו" class="btn btn-default" type="submit">סמסטר ו</button>';
+                                echo '<button name="semester" value="ה" class="btn btn-default active" type="submit">סמסטר ה</button>';
+                                echo '<button name="semester" value="ד" class="btn btn-default" type="submit">סמסטר ד</button>';
+                            }
+                            if($semester=='ו'){
+                                echo '<button name="semester" value="ו" class="btn btn-default active" type="submit">סמסטר ו</button>';
+                                echo '<button name="semester" value="ה" class="btn btn-default" type="submit">סמסטר ה</button>';
+                                echo '<button name="semester" value="ד" class="btn btn-default" type="submit">סמסטר ד</button>';
+                            }
+?>
+                        </div>
+                    </form>
                 </div>
             </div>
             <br>
@@ -186,8 +203,17 @@
                             <form action="php/UpdateGrade.php" method="post" accept-charset="utf-8">
                                 <label for="class">קורס</label>
                                 <select name="class" id="class" required>
-                                    <option></option>
-                                    <option value="משפט">קורסים PHP</option>
+                                    <?php
+                                        $mysql_qry = "SELECT * FROM students WHERE email = '$email'";
+                                        $ans= mysqli_query($conn, $mysql_qry);
+                                        $row = mysqli_fetch_assoc($ans);
+                                        $degree = $row['Degree'];
+                                        $mysql_qry = "SELECT * FROM  course as c join coursedegree as cd on cd.coursename = c.coursename where semster = '$semester' and degree = '$degree'";
+                                        $ans= mysqli_query($conn, $mysql_qry);
+                                        while($row = mysqli_fetch_assoc($ans)) {
+                                           echo '<option value='.$row["coursename"].'>'.$row["coursename"].'</option>';
+                                        }
+                                    ?>
                                 </select>
                                 <label for="grade">ציון</label>
                                 <input type="number" name="grade" id="grade" required style="width: 55px;">
@@ -211,8 +237,17 @@
                             <form action="php\RemoveGrade.php" method="post" accept-charset="utf-8">
                                 <label for="class">קורס</label>
                                 <select name="class" id="class" required>
-                                    <option></option>
-                                    <option value="משפט">משפט</option>
+                                    <?php
+                                        $mysql_qry = "SELECT * FROM students WHERE email = '$email'";
+                                        $ans= mysqli_query($conn, $mysql_qry);
+                                        $row = mysqli_fetch_assoc($ans);
+                                        $degree = $row['Degree'];
+                                        $mysql_qry = "SELECT * FROM  course as c join coursedegree as cd on cd.coursename = c.coursename where semster = '$semester' and degree = '$degree'";
+                                        $ans= mysqli_query($conn, $mysql_qry);
+                                        while($row = mysqli_fetch_assoc($ans)) {
+                                            echo '<option value='.$row["coursename"].'>'.$row["coursename"].'</option>';
+                                        }
+                                    ?>
                                 </select>
                                 <input name="email" style="display: none" value="<?php echo $email ?>">
                                 <input type="submit"  class="btn btn btn-success" value="הסר">
@@ -234,8 +269,17 @@
                             <form action="php/UpdateGrade.php" method="post" accept-charset="utf-8">
                                 <label for="class">קורס</label>
                                 <select name="class" id="class" required>
-                                    <option></option>
-                                    <option value="משפט">משפט</option>
+                                    <?php
+                                        $mysql_qry = "SELECT * FROM students WHERE email = '$email'";
+                                        $ans= mysqli_query($conn, $mysql_qry);
+                                        $row = mysqli_fetch_assoc($ans);
+                                        $degree = $row['Degree'];
+                                        $mysql_qry = "SELECT * FROM  course as c join coursedegree as cd on cd.coursename = c.coursename where semster = '$semester' and degree = '$degree'";
+                                        $ans= mysqli_query($conn, $mysql_qry);
+                                        while($row = mysqli_fetch_assoc($ans)) {
+                                            echo '<option value='.$row["coursename"].'>'.$row["coursename"].'</option>';
+                                        }
+                                    ?>
                                 </select>
                                 <label for="grade">ציון</label>
                                 <input type="number" name="grade" id="grade" required style="width: 55px;">
@@ -259,8 +303,17 @@
                             <form action="php/UpdateTargetGrade.php" method="post" accept-charset="utf-8">
                                 <label for="class">קורס</label>
                                 <select name="class" id="class" required>
-                                    <option></option>
-                                    <option value="משפט">משפט </option>
+                                    <?php
+                                        $mysql_qry = "SELECT * FROM students WHERE email = '$email'";
+                                        $ans= mysqli_query($conn, $mysql_qry);
+                                        $row = mysqli_fetch_assoc($ans);
+                                        $degree = $row['Degree'];
+                                        $mysql_qry = "SELECT * FROM  course as c join coursedegree as cd on cd.coursename = c.coursename where semster = '$semester' and degree = '$degree'";
+                                        $ans= mysqli_query($conn, $mysql_qry);
+                                        while($row = mysqli_fetch_assoc($ans)) {
+                                            echo '<option value='.$row["coursename"].'>'.$row["coursename"].'</option>';
+                                        }
+                                    ?>
                                 </select>
                                 <label for="grade">ציון</label>
                                 <input type="number" name="grade" id="grade" required style="width: 55px;">
@@ -292,7 +345,7 @@
                                 <tbody>
                                 <!-- טבלת ציונים - תוכן-->
                                 <?php
-                                    $mysql_qry = "SELECT * FROM studentcourse as s join course as c on s.coursename = c.coursename where email = 'gileadn@post.bgu.ac.il' and grade>0 and ";
+                                    $mysql_qry = "SELECT * FROM studentcourse as s join course as c on s.coursename = c.coursename where email = '$email' and grade>0 and semster = '$semester'";
                                     $ans= mysqli_query($conn, $mysql_qry);
                                     while($row = mysqli_fetch_assoc($ans)) {
                                         echo '<tr>';
@@ -324,7 +377,7 @@
                                 </thead>
                                 <tbody>
                                 <?php
-                                    $mysql_qry = "SELECT * FROM studentcoursetarget as s join course as c on s.coursename = c.coursename where email = '$email'";
+                                    $mysql_qry = "SELECT * FROM studentcoursetarget as s join course as c on s.coursename = c.coursename where email = '$email' AND semster = '$semester'";
                                     $ans= mysqli_query($conn, $mysql_qry);
                                     while($row = mysqli_fetch_assoc($ans)) {
                                         echo '<tr>';

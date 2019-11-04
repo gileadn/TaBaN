@@ -142,65 +142,74 @@
                             
                             <div class="container">
                                 <div class="row">
-                                    <div class="clearfix"></div>
-                                    <h3>זמן התחלה</h3>
-                                    <div>
-                                        תאריך
-                                        <div class="form-group" dir="ltr">
-                                            <div class="input-group date" id="myDatepicker2">
-                                                <input type="text" class="form-control">
-                                                <span class="input-group-addon">
-                                                            <span class="glyphicon glyphicon-calendar"></span>
-                                                        </span>
+                                    <form action="" method="post">
+                                        <div class="clearfix"></div>
+                                        <select>
+                                            <?php
+                                                foreach ($service->calendarList->listCalendarList()->getItems() as $list) {
+                                                    echo '<option value='.$list->getid().'>'.$list->getSummary().'</option>';
+                                                }
+                                            ?>
+                                        </select>
+                                        <h3>זמן התחלה</h3>
+                                        <div>
+                                            תאריך
+                                            <div class="form-group" dir="ltr">
+                                                <div class="input-group date" id="myDatepicker2">
+                                                    <input type="text" class="form-control">
+                                                    <span class="input-group-addon">
+                                                                <span class="glyphicon glyphicon-calendar"></span>
+                                                            </span>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                    <div>
-                                        שעה
-                                        <div class="form-group" dir="ltr">
-                                            <div class="input-group date" id="myDatepicker3" >
-                                                <input type="text" class="form-control">
-                                                <span class="input-group-addon">
-                               <span class="glyphicon glyphicon-calendar"></span>
-                            </span>
+                                        <div class="clearfix"></div>
+                                        <div>
+                                            שעה
+                                            <div class="form-group" dir="ltr">
+                                                <div class="input-group date" id="myDatepicker3" >
+                                                    <input type="text" class="form-control">
+                                                    <span class="input-group-addon">
+                                                        <span class="glyphicon glyphicon-calendar"></span>
+                                                    </span>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                    <h3>זמן סיום</h3>
-                                    <div>
-                                        זמן סיום
-                                        <div class="form-group" dir="ltr">
-                                            <div class="input-group date" id="myDatepicker4">
-                                                <input type="text" class="form-control">
-                                                <span class="input-group-addon">
-                                                            <span class="glyphicon glyphicon-calendar"></span>
-                                                        </span>
+                                        <div class="clearfix"></div>
+                                        <h3>זמן סיום</h3>
+                                        <div>
+                                            זמן סיום
+                                            <div class="form-group" dir="ltr">
+                                                <div class="input-group date" id="myDatepicker4">
+                                                    <input type="text" class="form-control">
+                                                    <span class="input-group-addon">
+                                                                <span class="glyphicon glyphicon-calendar"></span>
+                                                            </span>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    
-                                    <div class="clearfix"></div>
-                                    <div style="display: inline-block;">
-                                        <h2>כמות משתתפים</h2>
-                                        <div style="display: inline-block; width: 100px">ניהול מערכות מידע</div>
-                                        <input type="number" value="0" min="0" style="width: 15%" >
                                         <div class="clearfix"></div>
-                                        <div style="display: inline-block; width: 100px">פוליטיקה וממשל</div>
-                                        <input type="number" value="0" min="0" style="width: 15%" >
-                                        <div class="clearfix"></div>
-                                        <div style="display: inline-block; width: 100px">מתמטיקה</div>
-                                        <input type="number" value="0" min="0" style="width: 15%" >
-                                        <div class="clearfix"></div>
-                                        <div style="display: inline-block; width: 100px">כלכלה</div>
-                                        <input type="number" value="0" min="0" style="width: 15%" >
-                                        <div class="clearfix"></div>
-                                    </div>
-                                    <div style="display: inline-block">
-                                        <h2>תיאור האילוץ</h2>
-                                        <textarea id="message" required="required" class="form-control" name="message" data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-maxlength="100" data-parsley-minlength-message="Come on! You need to enter at least a 20 caracters long comment.." data-parsley-validation-threshold="10"></textarea>
-                                    </div>
+                                        <div style="display: inline-block;">
+                                            <h2>כמות משתתפים</h2>
+                                            <div style="display: inline-block; width: 100px">ניהול מערכות מידע</div>
+                                            <input type="number" value="0" min="0" style="width: 15%" >
+                                            <div class="clearfix"></div>
+                                            <div style="display: inline-block; width: 100px">פוליטיקה וממשל</div>
+                                            <input type="number" value="0" min="0" style="width: 15%" >
+                                            <div class="clearfix"></div>
+                                            <div style="display: inline-block; width: 100px">מתמטיקה</div>
+                                            <input type="number" value="0" min="0" style="width: 15%" >
+                                            <div class="clearfix"></div>
+                                            <div style="display: inline-block; width: 100px">כלכלה</div>
+                                            <input type="number" value="0" min="0" style="width: 15%" >
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div style="display: inline-block">
+                                            <h2>תיאור האילוץ</h2>
+                                            <textarea id="message" required="required" class="form-control" name="message" data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-maxlength="100" data-parsley-minlength-message="Come on! You need to enter at least a 20 caracters long comment.." data-parsley-validation-threshold="10"></textarea>
+                                        </div>
+                                        <input type="submit">
+                                    </form>
                                 </div>
                             </div>
                         </div>
