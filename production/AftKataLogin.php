@@ -53,11 +53,8 @@
         <div class="col-md-3 left_col" style="display: block">
             <div class="left_col scroll-view">
                 <a href="AftKataLogin.php" class="site_title" style="padding-bottom: 70px;"><img src="images/logo2.png" height="50" width="50"/><span>HASKALA</span></a>
-                
                 <div class="clearfix"></div>
-                
                 <br />
-                
                 <!-- sidebar menu -->
                 <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                     <div class="menu_section" dir="rtl">
@@ -155,14 +152,112 @@
                     <a onclick="openRemoveForm()" class="btn btn-app" style="background-color: lightsalmon;">
                         <i class="fa fa-minus"></i> הסר
                     </a>
-                    <a onclick="openEditForm()" class="btn btn-app" style="background-color: lightskyblue;">
+                    <a onclick="openEditForm1()" class="btn btn-app" style="background-color: lightskyblue;">
                         <i class="fa fa-edit"></i> ערוך
                     </a>
                 </div>
                 <div class="col-md-6 col-sm-12 col-xs-12 " dir="rtl" style="text-align: center">
-                    <a onclick="openEditForm()" class="btn btn-app" style="background-color: lightskyblue;">
+                    <a onclick="openEditForm2()" class="btn btn-app" style="background-color: lightskyblue;">
                         <i class="fa fa-edit"></i> ערוך
                     </a>
+                </div>
+            </div>
+            <!-- הוספה-->
+            <div class="row" style="display: none" id="AddForm">
+                <div class="col-md-12 col-sm-12 col-xs-12" dir="rtl" style="text-align: center">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2 style="float: right">הוסף ציון</h2>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+                            <form action="php/UpdateGrade.php" method="post" accept-charset="utf-8">
+                                <label for="class">קורס</label>
+                                <select name="class" id="class" required>
+                                    <option></option>
+                                    <option value="משפט">קורסים PHP</option>
+                                </select>
+                                <label for="grade">ציון</label>
+                                <input type="number" name="grade" id="grade" required style="width: 55px;">
+                                <input name="email" style="display: none" value="<?php echo $email ?>">
+                                <input type="submit"  class="btn btn btn-success" value="הוסף">
+                                <button type="button" onclick="closeForm()" class="btn btn btn-danger">סגור</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--הסרה -->
+            <div class="row" style="display: none" id="RemoveForm">
+                <div class="col-md-12 col-sm-12 col-xs-12" dir="rtl" style="text-align: center">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2 style="float: right">הסר ציון</h2>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+                            <form action="php\RemoveGrade.php" method="post" accept-charset="utf-8">
+                                <label for="class">קורס</label>
+                                <select name="class" id="class" required>
+                                    <option></option>
+                                    <option value="משפט">משפט</option>
+                                </select>
+                                <input name="email" style="display: none" value="<?php echo $email ?>">
+                                <input type="submit"  class="btn btn btn-success" value="הסר">
+                                <button type="button" onclick="closeForm()" class="btn btn btn-danger">סגור</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ערוך ציונים -->
+            <div class="row" style="display: none" id="EditForm1">
+                <div class="col-md-12 col-sm-12 col-xs-12" dir="rtl" style="text-align: center">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2 style="float: right">ערוך ציון</h2>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+                            <form action="php/UpdateGrade.php" method="post" accept-charset="utf-8">
+                                <label for="class">קורס</label>
+                                <select name="class" id="class" required>
+                                    <option></option>
+                                    <option value="משפט">משפט</option>
+                                </select>
+                                <label for="grade">ציון</label>
+                                <input type="number" name="grade" id="grade" required style="width: 55px;">
+                                <input name="email" style="display: none" value="<?php echo $email ?>">
+                                <input type="submit"  class="btn btn btn-success" value="ערוך">
+                                <button type="button" onclick="closeForm()" class="btn btn btn-danger">סגור</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ערוך יעדים -->
+            <div class="row" style="display: none" id="EditForm2">
+                <div class="col-md-12 col-sm-12 col-xs-12" dir="rtl" style="text-align: center">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2 style="float: right">ערוך יעדים</h2>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+                            <form action="php/UpdateTargetGrade.php" method="post" accept-charset="utf-8">
+                                <label for="class">קורס</label>
+                                <select name="class" id="class" required>
+                                    <option></option>
+                                    <option value="משפט">משפט </option>
+                                </select>
+                                <label for="grade">ציון</label>
+                                <input type="number" name="grade" id="grade" required style="width: 55px;">
+                                <input name="email" style="display: none" value="<?php echo $email ?>">
+                                <input type="submit"  class="btn btn btn-success" value="ערוך">
+                                <button type="button" onclick="closeForm()" class="btn btn btn-danger">סגור</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!--טבלת ציונים -->
@@ -185,7 +280,7 @@
                                 <tbody>
                                 <!-- טבלת ציונים - תוכן-->
                                 <?php
-                                    $mysql_qry = "SELECT * FROM studentcourse as s join course as c on s.coursename = c.coursename where email = 'gileadn@post.bgu.ac.il'";
+                                    $mysql_qry = "SELECT * FROM studentcourse as s join course as c on s.coursename = c.coursename where email = 'gileadn@post.bgu.ac.il' and grade>0";
                                     $ans= mysqli_query($conn, $mysql_qry);
                                     while($row = mysqli_fetch_assoc($ans)) {
                                         echo '<tr>';
@@ -294,6 +389,37 @@
 
 <!-- Custom Theme Scripts -->
 <script src="../build/js/custom.min.js"></script>
-
+<script>
+  function openAddForm() {
+    document.getElementById("AddForm").style.display = "block";
+    document.getElementById("RemoveForm").style.display = "none";
+    document.getElementById("EditForm1").style.display = "none";
+    document.getElementById("EditForm2").style.display = "none";
+  }
+  function openRemoveForm() {
+    document.getElementById("RemoveForm").style.display = "block";
+    document.getElementById("AddForm").style.display = "none";
+    document.getElementById("EditForm1").style.display = "none";
+    document.getElementById("EditForm2").style.display = "none";
+  }
+  function openEditForm1() {
+    document.getElementById("EditForm1").style.display = "block";
+    document.getElementById("AddForm").style.display = "none";
+    document.getElementById("RemoveForm").style.display = "none";
+    document.getElementById("EditForm2").style.display = "none";
+  }
+  function openEditForm2() {
+    document.getElementById("EditForm2").style.display = "block";
+    document.getElementById("EditForm1").style.display = "none";
+    document.getElementById("AddForm").style.display = "none";
+    document.getElementById("RemoveForm").style.display = "none";
+  }
+  function closeForm() {
+    document.getElementById("AddForm").style.display = "none";
+    document.getElementById("RemoveForm").style.display = "none";
+    document.getElementById("EditForm1").style.display = "none";
+    document.getElementById("EditForm2").style.display = "none";
+  }
+</script>
 </body>
 </html>
