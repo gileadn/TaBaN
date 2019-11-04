@@ -956,8 +956,12 @@
       <workItem from="1571084302136" duration="38656000" />
 =======
       <workItem from="1571084302136" duration="27001000" />
+<<<<<<< HEAD
       <workItem from="1572874003862" duration="7406000" />
 >>>>>>> 85edc3c9bbadb2e229678b5d053782b6608a6273
+=======
+      <workItem from="1572874003862" duration="7720000" />
+>>>>>>> shahar
     </task>
     <servers />
   </component>
@@ -968,10 +972,14 @@
   </component>
   <component name="TimeTrackingManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="71581000" />
 =======
     <option name="totallyTimeSpent" value="67332000" />
 >>>>>>> 85edc3c9bbadb2e229678b5d053782b6608a6273
+=======
+    <option name="totallyTimeSpent" value="67646000" />
+>>>>>>> shahar
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />

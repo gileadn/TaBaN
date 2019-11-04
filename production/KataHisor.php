@@ -109,7 +109,7 @@
                 <div class="col-md-12 col-sm-12 col-xs-12" style="text-align: center;">
                     <div class="btn-group" data-toggle="buttons">
                         <label class="btn btn-default">
-                            <input type="radio" name="options" id="option1"> סמסטר 1'
+                            <input type="radio" name="options" id="option1"> סמסטר ו'
                         </label>
                         <label class="btn btn-default">
                             <input type="radio" name="options" id="option2"> סמסטר ה'
